@@ -6,4 +6,12 @@ public class Ballet extends MusicalShow {
         super(title, duration, director, musicAuthor, librettoText);
         this.choreographer = choreographer;
     }
+
+    public String getChoreographer() {
+        return choreographer;
+    }
+
+    public void setChoreographer(String choreographer) {
+        this.choreographer = choreographer;
+    }
 }

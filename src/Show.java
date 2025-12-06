@@ -74,4 +74,31 @@ public class Show {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
+    }
+
+    public ArrayList<Actor> getListOfActors() {
+        return listOfActors;
+    }
+
+    public void setListOfActors(ArrayList<Actor> listOfActors) {
+        this.listOfActors = listOfActors;
+    }
 }

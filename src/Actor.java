@@ -30,4 +30,8 @@ public class Actor extends Person {
     public int hashCode() {
         return Objects.hash(super.hashCode(), height);
     }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }

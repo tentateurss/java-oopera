@@ -10,4 +10,12 @@ public class Director extends Person {
     public String toString() {
         return String.format("Режисер: %s %s", getName(), getSurname());
     }
+
+    public int getNumberOfShows() {
+        return numberOfShows;
+    }
+
+    public void setNumberOfShows(int numberOfShows) {
+        this.numberOfShows = numberOfShows;
+    }
 }
