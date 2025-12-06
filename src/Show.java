@@ -1,9 +1,3 @@
-package Show;
-
-import Person.Actor;
-import Person.Director;
-import Person.Gender;
-
 import java.util.ArrayList;
 
 public class Show {
@@ -13,33 +7,35 @@ public class Show {
     private ArrayList<Actor> listOfActors;
 
 
-    public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors) {
+    public Show(String title, int duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
+        listOfActors = new ArrayList<>();
     }
 
-    public void addActors(String name, String surName, Gender gender, int height) {
-        Actor tempActor = new Actor(name, surName, gender, height);
+    public void addActor(Actor actor) {
 
         boolean isActorExist = false;
-        for (Actor listOfActor : listOfActors) {
-            if (listOfActor.getName().equalsIgnoreCase(name) &&
-                    listOfActor.getSurname().equalsIgnoreCase(surName) &&
-                    listOfActor.getHeight() == height) {
+        for (Actor existingActor : listOfActors) {
+            if (existingActor.getName().equalsIgnoreCase(actor.getName()) &&
+                    existingActor.getSurname().equalsIgnoreCase(actor.getSurname()) &&
+                    existingActor.getHeight() == actor.getHeight()) {
                 isActorExist = true;
                 break;
             }
         }
 
         if (isActorExist) {
-            System.out.printf("Актер %s %s - Уже участвует в спектакле!\n", name, surName);
+            System.out.printf("Актер %s %s - уже участвует в представлении!\n",
+                    actor.getName(), actor.getSurname());
         } else {
-            Actor actor = new Actor(name, surName, gender, height);
             listOfActors.add(actor);
-            System.out.printf("Актер %s %s - Успешно добавлен!\n", name, surName);
+            System.out.printf("Актер %s %s - успешно добавлен!\n",
+                    actor.getName(), actor.getSurname());
         }
     }
+
 
     public void changeActor(Actor actor, String surName) {
         if (surName == null || actor == null) {
@@ -64,7 +60,7 @@ public class Show {
         }
 
         if (!found) {
-            System.out.println("Актер не был найден!");
+            System.out.printf("Актер %s не был найден!", surName);
         }
     }
 
@@ -72,6 +68,10 @@ public class Show {
         for (Actor listOfActor : listOfActors) {
             System.out.println(listOfActor.toString());
         }
+    }
+
+    public String getTitle() {
+        return title;
     }
 
 }
