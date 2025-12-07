@@ -8,14 +8,14 @@ public class Director extends Person {
 
     @Override
     public String toString() {
-        return String.format("Режисер: %s %s", getName(), getSurname());
-    }
-
-    public void printDirectorInfo() {
-        System.out.println("=== Режиссер: ===");
-        System.out.printf("Имя: %s %s%n", getName(), getSurname());
-        System.out.printf("Поставлено спектаклей: %d%n", numberOfShows);
-        System.out.printf("Пол: %s%n", getGender() == Gender.MALE ? "мужской" : "женский");
+        return String.format("=== Режиссер: ===%n" +
+                        "Имя: %s %s%n" +
+                        "Поставлено спектаклей: %d%n" +
+                        "Пол: %s",
+                getName(),
+                getSurname(),
+                numberOfShows,
+                getGender() == Gender.MALE ? "мужской" : "женский");
     }
 
     public int getNumberOfShows() {
