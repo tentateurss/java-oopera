@@ -11,6 +11,13 @@ public class Director extends Person {
         return String.format("Режисер: %s %s", getName(), getSurname());
     }
 
+    public void printDirectorInfo() {
+        System.out.println("=== Режиссер: ===");
+        System.out.printf("Имя: %s %s%n", getName(), getSurname());
+        System.out.printf("Поставлено спектаклей: %d%n", numberOfShows);
+        System.out.printf("Пол: %s%n", getGender() == Gender.MALE ? "мужской" : "женский");
+    }
+
     public int getNumberOfShows() {
         return numberOfShows;
     }

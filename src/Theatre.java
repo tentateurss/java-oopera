@@ -9,8 +9,8 @@ public class Theatre {
         Director director1 = new Director("Франко", "Дзеффирелли", Gender.MALE, 50);
         Director director2 = new Director("Каликсто", "Биейто", Gender.MALE, 80);
 
-        String musicAuthor = "Пётр Чайковский";
-        String choreographer = "Мариус Петипа";
+        Person musicAuthor = new Person("Пётр", "Чайковский", Gender.MALE);
+        Person choreographer = new Person("Лев", "Иванов", Gender.MALE);
 
         Show regullarShow = new Show("Ревизор", 200, director1);
 
@@ -20,7 +20,7 @@ public class Theatre {
 
         Ballet newYearBallet = new Ballet("Щелкунчик", 120, director1, musicAuthor,
                 "История девочки Мари, получившей в подарок на Рождество деревянного Щелкунчика",
-                "Лев Иванов");
+                choreographer);
 
         System.out.println("============== Распределение актеров по спектаклям ==============\n");
         System.out.printf("=========== Распределяем актеров в спектакль %s ============\n", regullarShow.getTitle());
@@ -66,7 +66,7 @@ public class Theatre {
         System.out.printf("\n=============== Заменяем актера в спектакте %s =============\n", regullarShow.getTitle());
 
         regullarShow.changeActor(actor3, "Литвинова");
-        System.out.printf("\n=============== Текущий список актеров спектакля %s =============\n", regullarShow.getTitle());
+        System.out.printf("\n=========== Текущий список актеров спектакля %s =============\n", regullarShow.getTitle());
 
         regullarShow.printAllActors();
 
@@ -76,13 +76,13 @@ public class Theatre {
 
         opera.changeActor(actor1, "Иванович");
 
-        System.out.println(LOW_BOARD);
-
-        System.out.printf("\n=============== Либретто для оперы %s =============\n", opera.getTitle());
+        System.out.printf("\n=================== Либретто для оперы %s =================\n", opera.getTitle());
 
         opera.printLibrettoText();
 
-        System.out.printf("\n=============== Либретто для балета %s =============\n", newYearBallet.getTitle());
+        System.out.println(LOW_BOARD);
+
+        System.out.printf("\n================== Либретто для балета %s ================\n", newYearBallet.getTitle());
 
         newYearBallet.printLibrettoText();
 
